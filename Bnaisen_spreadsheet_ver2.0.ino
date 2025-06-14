@@ -3,11 +3,11 @@
 #include <HTTPClient.h>
 
 // --- WiFi設定 ---
-const char* ssid = "elecom-ee9273";         // ←Wi-FiのSSIDを入力
-const char* password = "45nx69uwed64"; // ←Wi-Fiのパスワードを入力
+const char* ssid = "";         // ←Wi-FiのSSIDを入力
+const char* password = ""; // ←Wi-Fiのパスワードを入力
 
 // --- Google Apps ScriptのWeb Apps URL（デプロイ時に取得）---
-const char* scriptURL = "https://script.google.com/macros/s/AKfycbxrZB4MqCI6c4KG5JRhbs_PITHKkgFNSNC1hJkxvVKp1KvZ2FQI6cgsKm55yWROv7leHw/exec";
+const char* scriptURL = "";
 
 // --- I2C設定 ---
 #define I2C_SLAVE_ADDR 8
@@ -70,7 +70,6 @@ void setup() {
 }
 
 void loop() {
-  // データが更新されたら送信（例：1秒ごとに送信）
   sendToSheet(receivedData);
   Serial.printf("T:%.2f H:%.2f P:%.2f Lat:%.6f Lon:%.6f\n",
     receivedData.temperature, receivedData.humidity, receivedData.pressure,
